@@ -1,1 +1,17 @@
+# Virtual environment
 venv/
+
+# Mac OSX
+.DS_Store
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+**/migrations/*
+
+# Backup files # 
+*.bak
