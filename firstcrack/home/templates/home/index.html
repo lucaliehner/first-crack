@@ -1,0 +1,20 @@
+{% extends 'theme/base.html' %}
+<div>
+    {% block content %}
+        <h1 class="mt-32 text-4xl italic font-extrabold text-center font-headings lg:text-8xl text-slate-700">firstcrack.</h1>
+        <div class="container p-4 mx-auto mt-16 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            <a href="{% url 'events:events' %}"
+               class="transition p-8 rounded-lg shadow-2xl hover:bg-slate-50">
+                <h2 class="text-2xl font-bold font-headings">Events</h2>
+                <p class="text-center font-headings text-8xl text-slate-400">{{ events.count }}</p>
+                <p class="mt-6 font-sans text-xs text-center text-slate-400">Upcoming events this month</p>
+            </a>
+            <a href="{% url 'sales:sales' %}"
+               class="transition p-8 rounded-lg shadow-2xl hover:bg-slate-50">
+                <h2 class="text-2xl font-bold font-headings">Sales</h2>
+                <p class="text-center font-headings text-8xl text-slate-400">0{{ sales.count }}</p>
+                <p class="mt-6 font-sans text-xs text-center text-slate-400">Sales to be completed</p>
+            </a>
+        </div>
+    {% endblock %}
+</div>

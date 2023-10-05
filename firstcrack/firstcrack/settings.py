@@ -32,8 +32,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'tailwind',
+    'widget_tweaks',
+    'address',
+    'import_export',
     'jazzmin',
     'theme',
+    'sales',
+    'home',
     'events',
     'django_browser_reload',
     'django.contrib.admin',
@@ -42,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    ]
 
 MIDDLEWARE = [
     'django_browser_reload.middleware.BrowserReloadMiddleware',
@@ -68,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'home.context_processors.badges'
             ],
         },
     },
@@ -136,4 +142,12 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# Google AOI
+GOOGLE_API_KEY="AIzaSyC-0FPj7PZBD-Riv6FJ4y-Nap0FSzfdvcA"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
+
 
