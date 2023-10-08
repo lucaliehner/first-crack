@@ -7,4 +7,40 @@
     <p>
         Total number of events: <strong>{{ object_list|length }}</strong>
     </p>
+    <div class="relative overflow-x-auto shadow-lg sm:rounded-lg mt-6">
+        <table class="w-full text-sm text-left text-slate-500 dark:text-slate-400">
+            <thead class="text-xs text-slate-700 uppercase bg-slate-50 dark:bg-slate-700 dark:text-slate-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">Event name</th>
+                    <th scope="col" class="px-6 py-3">Start date</th>
+                    <th scope="col" class="px-6 py-3">End date</th>
+                    <th scope="col" class="px-6 py-3">Employees</th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">View</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in object_list %}
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row"
+                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ event.name }}
+                        </th>
+                        <td class="px-6 py-4">{{ event.start_date }}</td>
+                        <td class="px-6 py-4">{{ event.end_date }}</td>
+                        <td class="px-6 py-4">
+                            {% for employee in event.staff.all %}
+                                <span class="bg-slate-200 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ employee.first_name }} {{ employee.last_name }}</span>
+                            {% endfor %}
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <a href="{% url "events:event-detail" pk=event.pk %}"
+                               class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

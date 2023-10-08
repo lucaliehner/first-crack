@@ -1,5 +1,5 @@
 <!-- drawer init and show -->
-<div class="container mx-auto">
+<div class="container px-6 mx-auto mb-6">
   <button
     class="mt-12 transition text-slate-400 hover:text-slate-500"
     type="button"
@@ -133,7 +133,7 @@
       </li>
       <li>
         <a
-          href="#"
+          href="{% url 'sales:products' %}"
           class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
         >
           <svg
@@ -171,6 +171,8 @@
       </li>
       <li>
         <a
+          data-modal-target="authentication-modal"
+          data-modal-toggle="authentication-modal"
           href="#"
           class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
         >
@@ -220,3 +222,5 @@
     </ul>
   </div>
 </div>
+
+{% include 'home/login_modal.html' %}

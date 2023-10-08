@@ -12,8 +12,14 @@
             <a href="{% url 'sales:sales' %}"
                class="transition p-8 rounded-lg shadow-2xl hover:bg-slate-50">
                 <h2 class="text-2xl font-bold font-headings">Sales</h2>
-                <p class="text-center font-headings text-8xl text-slate-400">0{{ sales.count }}</p>
+                <p class="text-center font-headings text-8xl text-slate-400">{{ open_sales.count }}</p>
                 <p class="mt-6 font-sans text-xs text-center text-slate-400">Sales to be completed</p>
+            </a>
+            <a href="{% url 'sales:products' %}"
+               class="transition p-8 rounded-lg shadow-2xl hover:bg-slate-50">
+                <h2 class="text-2xl font-bold font-headings">Products</h2>
+                <p class="text-center font-headings text-8xl text-slate-400">{{ all_products.count }}</p>
+                <p class="mt-6 font-sans text-xs text-center text-slate-400">Total number of products</p>
             </a>
         </div>
     {% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'theme/base.html' %}
+{% block sidebar %}
+    {% include 'theme/sidebar.html' %}
+{% endblock sidebar %}
+{% block content %}
+    <h2 class="text-4xl font-sans font-thin uppercase dark:text-white">{{ event.name }}</h2>
+    <hr class="h-px my-8 bg-slate-200 border-0 dark:bg-slate-700">
+    <p class="mt-4">
+        <strong>Starting date:</strong> {{ event.start_date }}
+    </p>
+    <p>
+        <strong>End date</strong> {{ event.end_date }}
+    </p>
+    <h3 class="mt-4 font-sans uppercase dark:text-white">Employees</h3>
+    <p>
+        {% for employee in event.staff.all %}
+            <a href="#"></a> <a href="#"
+    class="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center">{{ employee.first_name }} {{ employee.last_name }}</a>
+        </a>
+    {% endfor %}
+</p>
+{% endblock content %}

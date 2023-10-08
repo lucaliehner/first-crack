@@ -13,3 +13,5 @@ def calendar(request):
             }
     return render(request, 'events/calendar.html', context)
 
+class EventDetail(generic.DetailView):
+    model = Event
